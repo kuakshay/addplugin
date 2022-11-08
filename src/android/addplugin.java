@@ -23,7 +23,7 @@ public class addplugin extends CordovaPlugin {
         } else if (action.equals("subtract")) {
             // String message = args.getString(0);
 
-            this.subtractMethod(callbackContext);
+            this.subtractMethod(args, callbackContext);
             return true;
         }
         return false;
@@ -38,7 +38,7 @@ public class addplugin extends CordovaPlugin {
         // }
     }
 
-    private void subtractMethod(CallbackContext callbackContext) {
+    private void subtractMethod(JSONArray args, CallbackContext callbackContext) {
         String input1 = args.getString(0);
         String input2 = args.getString(1);
         callbackContext.success(Integer.parseInt(input1) - Integer.parseInt(input2));
