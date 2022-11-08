@@ -1,0 +1,19 @@
+{
+  "name": "addplugin",
+  "version": "1.0.0",
+  "description": "",
+  "cordova": {
+    "id": "com.addplugin",
+    "platforms": [
+      "android",
+      "ios"
+    ]
+  },
+  "keywords": [
+    "ecosystem:cordova",
+    "cordova-android",
+    "cordova-ios"
+  ],
+  "author": "",
+  "license": "ISC"
+}
