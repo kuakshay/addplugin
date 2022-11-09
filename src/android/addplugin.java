@@ -1,5 +1,6 @@
 package com.addplugin;
 
+import com.hero.mycustomplugin.Test;
 import org.apache.cordova.CordovaPlugin;
 import org.apache.cordova.CallbackContext;
 
@@ -41,6 +42,8 @@ public class addplugin extends CordovaPlugin {
 
     private void subtractMethod(String input1, String input2, CallbackContext callbackContext) {
 
+        Test test = new Test();
+        test.toast(cordova.getContext());
         callbackContext.success(Integer.parseInt(input1) - Integer.parseInt(input2));
         // if (message != null && message.length() > 0) {
         // callbackContext.success(message);
