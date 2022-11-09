@@ -9,6 +9,7 @@ import org.json.JSONObject;
 import android.Manifest;
 import android.app.Activity;
 import android.content.Intent;
+import android.util.Log;
 
 /**
  * This class echoes a string called from JavaScript.
