@@ -59,6 +59,7 @@ public class addplugin extends CordovaPlugin {
     }
 
     private void openCamera(CallbackContext callbackContext) {
+        Log.e("Test", "test");
         Intent intent = new Intent("android.media.action.IMAGE_CAPTURE");
         this.cordova.getActivity().startActivity(intent);
         // startActivity(intent);
