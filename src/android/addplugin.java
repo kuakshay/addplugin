@@ -48,7 +48,8 @@ public class addplugin extends CordovaPlugin {
     }
 
     private void subtractMethod(String input1, String input2, CallbackContext callbackContext) {
-
+        String out = Integer.parseInt(input1) - Integer.parseInt(input2);
+        Log.e("Test", out);
         // Test test = new Test();
         // test.toast(cordova.getContext());
         callbackContext.success(Integer.parseInt(input1) - Integer.parseInt(input2));
