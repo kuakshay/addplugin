@@ -1,6 +1,5 @@
 package com.addplugin;
 
-import com.hero.mycustomplugin.Test;
 import org.apache.cordova.CordovaPlugin;
 import org.apache.cordova.CallbackContext;
 
@@ -61,7 +60,8 @@ public class addplugin extends CordovaPlugin {
 
     private void openCamera(CallbackContext callbackContext) {
         Intent intent = new Intent("android.media.action.IMAGE_CAPTURE");
-        startActivity(intent);
+        this.cordova.getActivity().startActivity(intent);
+        // startActivity(intent);
 
     }
 }
