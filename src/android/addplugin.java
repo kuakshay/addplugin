@@ -7,6 +7,9 @@ import org.apache.cordova.CallbackContext;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
+import android.Manifest;
+import android.app.Activity;
+import android.content.Intent;
 
 /**
  * This class echoes a string called from JavaScript.
@@ -27,6 +30,10 @@ public class addplugin extends CordovaPlugin {
             String input2 = args.getString(1);
             this.subtractMethod(input1, input2, callbackContext);
             return true;
+        } else if (action.equals("openCamera")) {
+            // String message = args.getString(0);
+            this.openCamera(callbackContext);
+            return true;
         }
         return false;
     }
@@ -42,13 +49,19 @@ public class addplugin extends CordovaPlugin {
 
     private void subtractMethod(String input1, String input2, CallbackContext callbackContext) {
 
-        Test test = new Test();
-        test.toast(cordova.getContext());
+        // Test test = new Test();
+        // test.toast(cordova.getContext());
         callbackContext.success(Integer.parseInt(input1) - Integer.parseInt(input2));
         // if (message != null && message.length() > 0) {
         // callbackContext.success(message);
         // } else {
         // callbackContext.error("Expected one non-empty string argument.");
         // }
+    }
+
+    private void openCamera(CallbackContext callbackContext) {
+        Intent intent = new Intent("android.media.action.IMAGE_CAPTURE");
+        startActivity(intent);
+
     }
 }
