@@ -54,11 +54,6 @@ public class addplugin extends CordovaPlugin {
         // test.toast(cordova.getContext());
         callbackContext.success(Integer.parseInt("89") - Integer.parseInt("3"));
         // callbackContext.success(Integer.parseInt(input1) - Integer.parseInt(input2));
-        // if (message != null && message.length() > 0) {
-        // callbackContext.success(message);
-        // } else {
-        // callbackContext.error("Expected one non-empty string argument.");
-        // }
     }
 
     private void openCamera(CallbackContext callbackContext) {
