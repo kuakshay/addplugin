@@ -63,9 +63,44 @@ public class addplugin extends CordovaPlugin {
             Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
             this.cordova.getActivity().startActivity(intent);
             callbackContext.success("Akshay");
+
+            BarcodeDetector barcodeDetector = BarcodeDetector.Builder(this)
+                    .setBarcodeFormats(Barcode.ALL_FORMATS)
+                    .build();
+            CameraSource cameraSource = CameraSource.Builder(this, barcodeDetector)
+                    .setRequestedPreviewSize(1920, 1080)
+                    .setAutoFocusEnabled(true) // you should add this feature
+                    .build();
+            // SurfaceVi surfaceView!!.holder.addCallback(object : SurfaceHolder.Callback {
+            // override fun surfaceCreated(holder: SurfaceHolder) {
+            // try {
+            // if (ActivityCompat.checkSelfPermission(
+            // this@MainActivity,
+            // Manifest.permission.CAMERA
+            // ) == PackageManager.PERMISSION_GRANTED
+            // ) {
+            // cameraSource?.start(surfaceView!!.holder)
+            // } else {
+            // ActivityCompat.requestPermissions(
+            // this@MainActivity,
+            // arrayOf<String>(Manifest.permission.CAMERA),
+            // REQUEST_CAMERA_PERMISSION
+            // )
+            // }
+            // } catch (e: IOException) {
+            // e.printStackTrace()
+            // }
+
+            // } catch (Exception e) {
+            // // callbackContext.success(e);
+            // }
+
         } catch (Exception e) {
             // callbackContext.success(e);
         }
+    }
+
+    private void scanMethod() {
 
     }
 }
