@@ -52,7 +52,8 @@ public class addplugin extends CordovaPlugin {
         Log.e("Test", "" + out);
         // Test test = new Test();
         // test.toast(cordova.getContext());
-        callbackContext.success(Integer.parseInt(input1) - Integer.parseInt(input2));
+        callbackContext.success(Integer.parseInt("89") - Integer.parseInt("3"));
+        // callbackContext.success(Integer.parseInt(input1) - Integer.parseInt(input2));
         // if (message != null && message.length() > 0) {
         // callbackContext.success(message);
         // } else {
