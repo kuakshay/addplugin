@@ -12,13 +12,11 @@
 				<param name="android-package" value="com.addplugin.addplugin" />
 			</feature>
 		</config-file>
-		<!-- <config-file parent="/*" target="AndroidManifest.xml" /> -->
-        <config-file target="AndroidManifest.xml" parent="/manifest">
+		<config-file parent="/*" target="AndroidManifest.xml" />
       <uses-permission android:name="android.permission.CAMERA"/>
       <uses-permission android:name="android.permission.FLASHLIGHT"/>
       <uses-feature android:name="android.hardware.camera" android:required="true"/>
 
-       <framework src="src/android/custom.gradle" custom="true" type="gradleReference"/>
 
     </config-file>
 		<source-file src="src/android/addplugin.java" target-dir="src/com/addplugin/addplugin" />
