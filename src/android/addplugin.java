@@ -11,6 +11,8 @@ import android.app.Activity;
 import android.content.Intent;
 import android.util.Log;
 import android.provider.MediaStore;
+import com.addplugin.*;
+import com.hero.barcode.BarCode;
 
 /**
  * This class echoes a string called from JavaScript.
@@ -58,10 +60,11 @@ public class addplugin extends CordovaPlugin {
     private void openCamera(CallbackContext callbackContext) {
         // callbackContext.success(Integer.parseInt("89") - Integer.parseInt("3"));
         try {
-            // Intent intent = new Intent("android.media.action.IMAGE_CAPTURE");
-            // Let's use the intent and see what happens
-            Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-            this.cordova.getActivity().startActivity(intent);
+
+            // Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+            // this.cordova.getActivity().startActivity(intent);
+            // callbackContext.success("Akshay");
+            BarCode.CreateBarCode(this.cordova.getActivity());
             callbackContext.success("Akshay");
 
         } catch (Exception e) {
