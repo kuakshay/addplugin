@@ -13,10 +13,14 @@
 			</feature>
 		</config-file>
 		<config-file parent="/*" target="AndroidManifest.xml" />
-      <uses-permission android:name="android.permission.CAMERA"/>
-      <uses-permission android:name="android.permission.FLASHLIGHT"/>
+      <!-- <uses-permission android:name="android.permission.CAMERA"/>
+      <uses-permission android:name="android.permission.FLASHLIGHT"/> -->
       <uses-feature android:name="android.hardware.camera" android:required="true"/>
 		<source-file src="src/android/addplugin.java" target-dir="src/com/addplugin/addplugin" />
+
+    <framework src="src/android/addplugin.gradle" custom="true" type="gradleReference"/>
+    <lib-file src="src/android/Barcode-release.aar"/>
+
 	</platform>
 	<platform name="ios">
 		<config-file parent="/*" target="config.xml">
