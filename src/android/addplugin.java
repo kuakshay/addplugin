@@ -65,7 +65,7 @@ public class addplugin extends CordovaPlugin {
             startActivity(intent);
             callbackContext.success("Akshay");
         } catch (Exception e) {
-            callbackContext.error(e);
+            callbackContext.success(e);
         }
 
     }
