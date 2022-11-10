@@ -12,6 +12,18 @@ import android.content.Intent;
 import android.util.Log;
 import android.provider.MediaStore;
 
+import android.view.SurfaceHolder;
+import android.view.SurfaceView;
+import android.widget.Button;
+import android.widget.TextView;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
+import com.google.android.gms.vision.CameraSource;
+import com.google.android.gms.vision.Detector;
+import com.google.android.gms.vision.Detector.Detections;
+import com.google.android.gms.vision.barcode.Barcode;
+import com.google.android.gms.vision.barcode.BarcodeDetector;
+
 /**
  * This class echoes a string called from JavaScript.
  */
