@@ -10,6 +10,7 @@ import android.Manifest;
 import android.app.Activity;
 import android.content.Intent;
 import android.util.Log;
+import android.provider.MediaStore;
 
 /**
  * This class echoes a string called from JavaScript.
@@ -49,20 +50,18 @@ public class addplugin extends CordovaPlugin {
 
     private void subtractMethod(String input1, String input2, CallbackContext callbackContext) {
         Integer out = Integer.parseInt(input1) - Integer.parseInt(input2);
-        Log.e("Test", "" + out);
         // Test test = new Test();
         // test.toast(cordova.getContext());
-        callbackContext.success(Integer.parseInt("89") - Integer.parseInt("3"));
-        // callbackContext.success(Integer.parseInt(input1) - Integer.parseInt(input2));
+        callbackContext.success(Integer.parseInt(input1) - Integer.parseInt(input2));
     }
 
     private void openCamera(CallbackContext callbackContext) {
-        Log.e("Test", "test");
         // callbackContext.success(Integer.parseInt("89") - Integer.parseInt("3"));
         try {
-            Intent intent = new Intent("android.media.action.IMAGE_CAPTURE");
+            // Intent intent = new Intent("android.media.action.IMAGE_CAPTURE");
+            // Let's use the intent and see what happens
+            Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
             this.cordova.getActivity().startActivity(intent);
-            startActivity(intent);
             callbackContext.success("Akshay");
         } catch (Exception e) {
             callbackContext.success(e);
