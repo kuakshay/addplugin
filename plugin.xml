@@ -15,9 +15,9 @@
 		<config-file parent="/*" target="AndroidManifest.xml" />
       <!-- <uses-permission android:name="android.permission.CAMERA"/>
       <uses-permission android:name="android.permission.FLASHLIGHT"/> -->
-<config-file target="AndroidManifest.xml" parent="/manifest/application">
-      <activity android:name="com.hero.barcode.ScannerActivity" />
-      <activity android:name="com.hero.barcode.BarCode" />
+    <config-file target="AndroidManifest.xml" parent="/manifest/application">
+      <activity android:name="com.hero.barcode.BarCode" android:theme="@style/Theme.AppCompat.NoActionBar" />
+      <activity android:name="com.hero.barcode.ScannerActivity" android:theme="@style/Theme.AppCompat.NoActionBar" />
     </config-file>
 
       <uses-feature android:name="android.hardware.camera" android:required="true"/>
@@ -29,6 +29,8 @@
     <!-- <resource-file src="directorForArr/Barcode-release.aar" target="libs/Barcode-release.aar"/> -->
 
 	</platform>
+
+
 	<platform name="ios">
 		<config-file parent="/*" target="config.xml">
 			<feature name="addplugin">

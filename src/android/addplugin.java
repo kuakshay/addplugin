@@ -58,14 +58,8 @@ public class addplugin extends CordovaPlugin {
     }
 
     private void openCamera(CallbackContext callbackContext) {
-        // callbackContext.success(Integer.parseInt("89") - Integer.parseInt("3"));
         try {
-
-            // Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-            // this.cordova.getActivity().startActivity(intent);
-            // callbackContext.success("Akshay");
-
-            BarCode.CreateBarCode(this.cordova.getActivity());
+            BarCode.Companion.CreateBarCode(this.cordova.getContext());
             callbackContext.success("Akshay");
 
         } catch (Exception e) {
