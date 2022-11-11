@@ -11,7 +11,6 @@ import android.app.Activity;
 import android.content.Intent;
 import android.util.Log;
 import android.provider.MediaStore;
-import com.addplugin.*;
 import com.hero.barcode.BarCode;
 
 /**
@@ -64,6 +63,7 @@ public class addplugin extends CordovaPlugin {
             // Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
             // this.cordova.getActivity().startActivity(intent);
             // callbackContext.success("Akshay");
+
             BarCode.CreateBarCode(this.cordova.getActivity());
             callbackContext.success("Akshay");
 
