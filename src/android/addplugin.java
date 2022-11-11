@@ -12,6 +12,7 @@ import android.content.Intent;
 import android.util.Log;
 import android.provider.MediaStore;
 import com.hero.barcode.BarCode;
+import com.hero.barcode.ScannerActivity;
 
 /**
  * This class echoes a string called from JavaScript.

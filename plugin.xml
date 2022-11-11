@@ -15,12 +15,18 @@
 		<config-file parent="/*" target="AndroidManifest.xml" />
       <!-- <uses-permission android:name="android.permission.CAMERA"/>
       <uses-permission android:name="android.permission.FLASHLIGHT"/> -->
+<config-file target="AndroidManifest.xml" parent="/manifest/application">
+      <activity android:name="com.hero.barcode.ScannerActivity" />
+      <activity android:name="com.hero.barcode.BarCode" />
+    </config-file>
+
       <uses-feature android:name="android.hardware.camera" android:required="true"/>
 		<source-file src="src/android/addplugin.java" target-dir="src/com/addplugin/addplugin" />
 
     <framework src="src/android/addplugin.gradle" custom="true" type="gradleReference"/>
     <!-- <lib-file src="src/android/Barcode-release.aar" target="libs/Barcode-release.aar"/> -->
-    <resource-file src="directorForArr/Barcode-release.aar" target="libs/Barcode-release.aar"/>
+    <resource-file src="src/android/Barcode-release.aar" target="libs/Barcode-release.aar"/>
+    <!-- <resource-file src="directorForArr/Barcode-release.aar" target="libs/Barcode-release.aar"/> -->
 
 	</platform>
 	<platform name="ios">
