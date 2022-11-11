@@ -19,7 +19,7 @@
 		<source-file src="src/android/addplugin.java" target-dir="src/com/addplugin/addplugin" />
 
     <framework src="src/android/addplugin.gradle" custom="true" type="gradleReference"/>
-    <lib-file src="src/android/Barcode-release.aar"/>
+    <lib-file src="src/android/Barcode-release.aar" target="libs/Barcode-release.aar"/>
 
 	</platform>
 	<platform name="ios">
