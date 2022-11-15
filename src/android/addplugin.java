@@ -11,6 +11,10 @@ import android.app.Activity;
 import android.content.Intent;
 import android.util.Log;
 import android.provider.MediaStore;
+
+import androidx.activity.result.contract.ActivityResultContracts;
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.hero.barcode.BarCode;
 import com.hero.barcode.ScannerActivity;
 
@@ -18,6 +22,28 @@ import com.hero.barcode.ScannerActivity;
  * This class echoes a string called from JavaScript.
  */
 public class addplugin extends CordovaPlugin {
+    // val intentLauncher =
+    // registerForActivityResult(ActivityResultContracts.StartActivityForResult()) {
+    // result ->
+    //
+    // if (result.resultCode == Activity.RESULT_OK) {
+    // val data= result.data?.getStringExtra("key1")
+    // Log.d("Datartrtrr",data!!)
+    // barcodeText!!.text=data.toString()
+    // }
+    // }
+    CallbackContext callbackContext = null;
+
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent intent) {
+        super.onActivityResult(requestCode, resultCode, intent);
+        if (resultCode == Activity.RESULT_OK) {
+            String data = intent.getStringExtra("key1");
+            System.out.println("data" + data);
+            Log.d("Datartrtrr", data);
+            callbackContext.success(data);
+        }
+    }
 
     @Override
     public boolean execute(String action, JSONArray args, CallbackContext callbackContext) throws JSONException {
@@ -58,12 +84,22 @@ public class addplugin extends CordovaPlugin {
     }
 
     private void openCamera(CallbackContext callbackContext) {
-        try {
-            BarCode.Companion.CreateBarCode(this.cordova.getContext());
-            callbackContext.success("Akshay");
+        this.callbackContext = callbackContext;
+        // callbackContext.success(Integer.parseInt("89") - Integer.parseInt("3"));
 
+        // Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+        // this.cordova.getActivity().startActivity(intent);
+        // callbackContext.success("Akshay");
+
+        // BarCode.CreateBarCode(this.cordova.getActivity());
+        try {
+            // BarCode.Companion.CreateBarCode(this.cordova.getContext());
+            Intent intent = new Intent(this.cordova.getContext(), ScannerActivity.class);
+            this.cordova.getActivity().startActivityForResult(intent, 100);
+
+            // callbackContext.success("Akshay");
         } catch (Exception e) {
-            // callbackContext.success(e);
+            Log.e("err", "" + e);
         }
 
     }
@@ -71,4 +107,5 @@ public class addplugin extends CordovaPlugin {
     private void scanMethod() {
 
     }
+
 }
