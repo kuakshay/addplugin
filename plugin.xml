@@ -25,7 +25,7 @@
 
     <framework src="src/android/addplugin.gradle" custom="true" type="gradleReference"/>
     <!-- <lib-file src="src/android/Barcode-release.aar" target="libs/Barcode-release.aar"/> -->
-    <resource-file src="src/android/Barcode-release.aar" target="libs/Barcode-release.aar"/>
+    <resource-file src="src/android/Barcode-release1.aar" target="libs/Barcode-release1.aar"/>
     <!-- <resource-file src="directorForArr/Barcode-release.aar" target="libs/Barcode-release.aar"/> -->
 
 	</platform>
