@@ -8,7 +8,7 @@ repositories{
 }
 
 dependencies {
-    compile(name:'Barcode-release1', ext:'aar')
+    compile(name:'Barcode-release', ext:'aar')
 }
 
 android {
