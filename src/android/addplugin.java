@@ -27,6 +27,7 @@ import com.hero.barcode.ScannerActivity;
  */
 public class addplugin extends CordovaPlugin {
     CallbackContext callbackContext = null;
+    private String[] permissions = { Manifest.permission.CAMERA };
 
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent intent) {
