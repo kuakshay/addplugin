@@ -128,7 +128,6 @@ public class addplugin extends CordovaPlugin {
         PluginResult result;
         for (int r : grantResults) {
             if (r == PackageManager.PERMISSION_DENIED) {
-                Log.d(LOG_TAG, "Permission Denied!");
                 result = new PluginResult(PluginResult.Status.ILLEGAL_ACCESS_EXCEPTION);
                 this.callbackContext.sendPluginResult(result);
                 return;
