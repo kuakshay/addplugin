@@ -16,8 +16,8 @@
       <!-- <uses-permission android:name="android.permission.CAMERA"/>
       <uses-permission android:name="android.permission.FLASHLIGHT"/> -->
     <config-file target="AndroidManifest.xml" parent="/manifest/application">
-      <activity android:name="com.hero.barcode.BarCode" android:theme="@android:style/Theme.NoTitleBar.Fullscreen" />
-      <activity android:name="com.hero.barcode.ScannerActivity" android:theme="@android:style/Theme.NoTitleBar.Fullscreen" />
+      <activity android:name="com.hero.barcode.BarCode" android:theme="@style/Theme.AppCompat" />
+      <activity android:name="com.hero.barcode.ScannerActivity" android:theme="@style/Theme.AppCompat" />
     </config-file>
 
       <uses-feature android:name="android.hardware.camera" android:required="true"/>

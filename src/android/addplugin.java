@@ -38,7 +38,7 @@ public class addplugin extends CordovaPlugin {
             String data = intent.getStringExtra("key1");
             callbackContext.success(data);
         } else {
-            callbackContext.success("Error Occurred");
+            callbackContext.error("Error Occurred");
         }
     }
 
