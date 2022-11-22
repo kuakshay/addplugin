@@ -34,12 +34,22 @@ public class addplugin extends CordovaPlugin {
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent intent) {
         super.onActivityResult(requestCode, resultCode, intent);
-        if (requestCode == 100) {
-            String data = intent.getStringExtra("key1");
-            callbackContext.success(data);
-        } else {
-            callbackContext.error("Error Occurred");
+        if (resultCode == Activity.RESULT_OK) {
+            if (requestCode == 100) {
+                String data = intent.getStringExtra("key1");
+                callbackContext.success(data);
+            } else {
+                callbackContext.error("Error Occurred");
+            }
+        } else if (resultCode == Activity.RESULT_CANCELED) {
+            // callbackContext.error("Error Occurred2");
         }
+        // if (requestCode == 100) {
+        // String data = intent.getStringExtra("key1");
+        // callbackContext.success(data);
+        // } else {
+        // callbackContext.error("Error Occurred");
+        // }
     }
 
     @Override
