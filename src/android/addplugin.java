@@ -13,15 +13,11 @@ import android.app.Activity;
 import android.content.Intent;
 import android.util.Log;
 import android.provider.MediaStore;
-import android.widget.Toast;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
-import android.util.Log;
 
 import androidx.activity.result.contract.ActivityResultContracts;
-import androidx.appcompat.app.AppCompatActivity;
 
-import com.hero.barcode.BarCode;
 import com.hero.barcode.ScannerActivity;
 
 /**
